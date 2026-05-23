@@ -82,7 +82,7 @@ export function Hero() {
               height={600}
               priority
               sizes="(max-width: 1024px) 90vw, 480px"
-              className="h-full w-full rounded-xl object-cover grayscale transition-all duration-700 hover:grayscale-0 sm:rounded-2xl"
+              className="h-full w-full rounded-xl object-cover transition-all duration-700 sm:rounded-2xl [@media(hover:hover)]:grayscale [@media(hover:hover)]:hover:grayscale-0"
             />
           </GlassCard>
           <div
