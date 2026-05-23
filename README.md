@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shravan S Chowta — Portfolio
 
-## Getting Started
+Production-ready developer portfolio built with **Next.js**, **Tailwind CSS v4**, and **Framer Motion**. Preserves the original Stitch design: dark glassmorphism, glowing orbs, particle hero, and premium startup-founder aesthetic.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS v4
+- Framer Motion
+- TypeScript
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/              # Layout, page, loading, global styles
+├── components/
+│   ├── layout/     # Navbar, Footer
+│   ├── sections/   # Hero, About, Skills, Projects, Journey, Contact
+│   └── ui/         # GlassCard, particles, buttons, animations
+├── hooks/          # Active section, glass mouse, glow parallax
+└── lib/            # Site content & constants
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit personal info, projects, and links in `src/lib/constants.ts`.
 
-## Deploy on Vercel
+## Performance notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Hero portrait uses `priority` loading; other images are lazy-loaded via `next/image`.
+- Respects `prefers-reduced-motion` for animations and particles.
+- Static generation for the home page.
